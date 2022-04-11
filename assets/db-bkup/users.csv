@@ -1,0 +1,4 @@
+__v,_id,createdAt,email,fname,hccid,level,lname,password,updatedAt
+0,624111adfc446fe6cb15e8a6,2022-03-28T01:38:53.037Z,dan@aol.com,Dan,2222222,faculty,Maj,$2a$10$hsP6AIJ1NTa4ipGBCrENF.e/G8FowAw7kGDeVxEMsFNfNX77byB8O,2022-03-28T01:38:53.037Z
+0,62411212fc446fe6cb15e8ac,2022-03-28T01:40:34.679Z,sam@aol.com,Sam,3333333,student,Maj,$2a$10$yFYHHp54KPbjGO/78MZh0eHHMevNELKUQZHclfPWWgsWAwIrTz5/W,2022-03-28T01:40:34.679Z
+0,6241140d9babacff3373b7fc,2022-03-28T01:49:01.112Z,tina@aol.com,Tina,1111111,faculty,Maj,$2a$10$SDlZJl4QCjuBxpbOw1tsNu67SOJJ0KoFZQqwIqGBPb2G7bzmm9tiC,2022-03-28T01:49:01.112Z

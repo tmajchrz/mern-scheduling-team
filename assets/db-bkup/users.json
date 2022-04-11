@@ -1,0 +1,52 @@
+[{
+  "_id": {
+    "$oid": "624111adfc446fe6cb15e8a6"
+  },
+  "fname": "Dan",
+  "lname": "Maj",
+  "email": "dan@aol.com",
+  "hccid": "2222222",
+  "level": "faculty",
+  "password": "$2a$10$hsP6AIJ1NTa4ipGBCrENF.e/G8FowAw7kGDeVxEMsFNfNX77byB8O",
+  "createdAt": {
+    "$date": "2022-03-28T01:38:53.037Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-28T01:38:53.037Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62411212fc446fe6cb15e8ac"
+  },
+  "fname": "Sam",
+  "lname": "Maj",
+  "email": "sam@aol.com",
+  "hccid": "3333333",
+  "level": "student",
+  "password": "$2a$10$yFYHHp54KPbjGO/78MZh0eHHMevNELKUQZHclfPWWgsWAwIrTz5/W",
+  "createdAt": {
+    "$date": "2022-03-28T01:40:34.679Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-28T01:40:34.679Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6241140d9babacff3373b7fc"
+  },
+  "fname": "Tina",
+  "lname": "Maj",
+  "email": "tina@aol.com",
+  "hccid": "1111111",
+  "level": "faculty",
+  "password": "$2a$10$SDlZJl4QCjuBxpbOw1tsNu67SOJJ0KoFZQqwIqGBPb2G7bzmm9tiC",
+  "createdAt": {
+    "$date": "2022-03-28T01:49:01.112Z"
+  },
+  "updatedAt": {
+    "$date": "2022-03-28T01:49:01.112Z"
+  },
+  "__v": 0
+}]
