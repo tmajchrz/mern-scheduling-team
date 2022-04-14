@@ -15,26 +15,29 @@ function Header() {
   }
 
   return (
-    <header className='header'>
-      <div className='logo'>
-        <Link to='/'>GoalSetter</Link>
-      </div>
+    <header className="header">
+      <div className="logo"></div>
       <ul>
         {user ? (
-          <li>
-            <button className='btn' onClick={onLogout}>
-              <FaSignOutAlt /> Logout
-            </button>
-          </li>
+          <>
+            <p style={{ display: 'inline' }}>
+              {user.fname} {user.lname[0]}
+            </p>
+            <li>
+              <button className="btn" onClick={onLogout}>
+                <FaSignOutAlt /> Logout
+              </button>
+            </li>
+          </>
         ) : (
           <>
             <li>
-              <Link to='/login'>
+              <Link to="/login">
                 <FaSignInAlt /> Login
               </Link>
             </li>
             <li>
-              <Link to='/register'>
+              <Link to="/register">
                 <FaUser /> Register
               </Link>
             </li>

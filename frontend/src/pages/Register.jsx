@@ -8,13 +8,15 @@ import Spinner from '../components/Spinner'
 
 function Register() {
   const [formData, setFormData] = useState({
-    name: '',
+    fname: '',
+    lname: '',
     email: '',
     password: '',
     password2: '',
+    hccid: '',
   })
 
-  const { name, email, password, password2 } = formData
+  const { fname, lname, email, password, password2, hccid } = formData
 
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -49,9 +51,11 @@ function Register() {
       toast.error('Passwords do not match')
     } else {
       const userData = {
-        name,
+        fname,
+        lname,
         email,
         password,
+        hccid,
       }
 
       dispatch(register(userData))
@@ -64,61 +68,83 @@ function Register() {
 
   return (
     <>
-      <section className='heading'>
+      <section className="heading">
         <h1>
           <FaUser /> Register
         </h1>
         <p>Please create an account</p>
       </section>
 
-      <section className='form'>
+      <section className="form">
         <form onSubmit={onSubmit}>
-          <div className='form-group'>
+          <div className="form-group">
             <input
-              type='text'
-              className='form-control'
-              id='name'
-              name='name'
-              value={name}
-              placeholder='Enter your name'
+              type="text"
+              className="form-control"
+              id="fname"
+              name="fname"
+              value={fname}
+              placeholder="Enter your first name"
               onChange={onChange}
             />
           </div>
-          <div className='form-group'>
+          <div className="form-group">
             <input
-              type='email'
-              className='form-control'
-              id='email'
-              name='email'
+              type="text"
+              className="form-control"
+              id="lname"
+              name="lname"
+              value={lname}
+              placeholder="Enter your last name"
+              onChange={onChange}
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="email"
+              className="form-control"
+              id="email"
+              name="email"
               value={email}
-              placeholder='Enter your email'
+              placeholder="Enter your email"
               onChange={onChange}
             />
           </div>
-          <div className='form-group'>
+          <div className="form-group">
             <input
-              type='password'
-              className='form-control'
-              id='password'
-              name='password'
+              type="password"
+              className="form-control"
+              id="password"
+              name="password"
               value={password}
-              placeholder='Enter password'
+              placeholder="Enter password"
               onChange={onChange}
             />
           </div>
-          <div className='form-group'>
+          <div className="form-group">
             <input
-              type='password'
-              className='form-control'
-              id='password2'
-              name='password2'
+              type="password"
+              className="form-control"
+              id="password2"
+              name="password2"
               value={password2}
-              placeholder='Confirm password'
+              placeholder="Confirm password"
               onChange={onChange}
             />
           </div>
-          <div className='form-group'>
-            <button type='submit' className='btn btn-block'>
+          <div className="form-group">
+            <input
+              type="number"
+              className="form-control"
+              id="hccid"
+              name="hccid"
+              value={hccid}
+              placeholder="Enter your HCC ID"
+              onChange={onChange}
+            />
+          </div>
+          <div className="form-group">
+            <button type="submit" className="btn btn-block">
               Submit
             </button>
           </div>
