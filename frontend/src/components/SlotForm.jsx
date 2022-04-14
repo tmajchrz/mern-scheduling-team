@@ -1,7 +1,13 @@
+/*=== Author= Mika ===*/
+
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
+
+// Need to adjust import according to renamed files
 import { createGoal } from '../features/goals/goalSlice'
 
+// Change the name of the function and most substance
+//  New SlotForm Function
 function SlotForm() {
   const [text, setText] = useState('')
 
@@ -14,6 +20,7 @@ function SlotForm() {
     setText('')
   }
 
+// Should return the week calendar form
   return ( 
     <section className='container'>
         <div className="grid-container">
@@ -38,6 +45,9 @@ function SlotForm() {
             <div id="Sa" className="day">
               <p>Sa</p>
             </div>
+            {/* This part needs to be adjusted
+            to properly display the SlotItem
+            and then replicated across the days */}
             <div className="sub-grid">
               {slots.length > 0 ? (
                 <div className='slots'>
