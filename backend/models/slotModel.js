@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 
 const slotSchema = mongoose.Schema(
   {
@@ -11,10 +11,24 @@ const slotSchema = mongoose.Schema(
       type: String,
       required: [true, 'Please add a text value'],
     },
+    startAt: {
+      type: Date,
+      required: [true, 'Please add a text value'],
+    },
+    endAt: {
+      type: Date,
+      required: [true, 'Please add a text value'],
+    },
+    vol1: {
+      type: mongoose.Schema.Types.ObjectId,
+    },
+    vol2: {
+      type: mongoose.Schema.Types.ObjectId,
+    },
   },
   {
     timestamps: true,
   }
-)
+);
 
-module.exports = mongoose.model('Slot', slotSchema)
+module.exports = mongoose.model('Slot', slotSchema);

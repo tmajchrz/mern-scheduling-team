@@ -33,8 +33,10 @@ export const getSlots = createAsyncThunk(
   'slots/getAll',
   async (_, thunkAPI) => {
     try {
-      const token = thunkAPI.getState().auth.user.token
-      return await slotService.getSlots(token)
+      if (thunkAPI.getState().auth.user) {
+        const token = thunkAPI.getState().auth.user.token;
+        return await slotService.getSlots(token);
+      }
     } catch (error) {
       const message =
         (error.response &&

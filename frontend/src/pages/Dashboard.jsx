@@ -1,19 +1,33 @@
-import { useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { useSelector, useDispatch } from 'react-redux'
-import GoalForm from '../components/GoalForm'
-import GoalItem from '../components/GoalItem'
-import Spinner from '../components/Spinner'
-import { getGoals, reset } from '../features/goals/goalSlice'
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import SlotForm from '../components/SlotForm';
+import Spinner from '../components/Spinner';
+import { getSlots, reset } from '../features/slots/slotSlice';
+import { getUsers } from '../features/users/userSlice';
 
 function Dashboard() {
-  const navigate = useNavigate()
-  const dispatch = useDispatch()
+  var today = new Date(), weekStart = new Date(), weekEnd = new Date();
 
-  const { user } = useSelector((state) => state.auth)
-  const { goals, isLoading, isError, message } = useSelector(
-    (state) => state.goals
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const { user } = useSelector((state) => state.auth);
+  //console.log(user.fname);
+  const { isLoading, isError, message } = useSelector(
+    (state) => state.slots
   )
+
+  // Set today to zero hours/minutes (beginning of day)
+  today.setHours(0);
+  today.setMinutes(0);
+  //console.log(today);
+
+  // Set weekStart to be the Sunday before today
+  // (i.e. subtract getDay (number of days since Sunday) from it)
+  weekStart.setDate(today.getDate()-today.getDay());
+
+  // TO DO -- Set weekEnd to the Saturday after weekStart (i.e. add 6 to it)
 
   useEffect(() => {
     if (isError) {
@@ -24,12 +38,13 @@ function Dashboard() {
       navigate('/login')
     }
 
-    dispatch(getGoals())
+    dispatch(getSlots());
+    dispatch(getUsers());
 
     return () => {
       dispatch(reset())
     }
-  }, [user, navigate, isError, message, dispatch])
+  }, [user, /* weekStart, weekEnd, */ navigate, isError, message, dispatch])
 
   if (isLoading) {
     return <Spinner />
@@ -37,24 +52,19 @@ function Dashboard() {
 
   return (
     <>
-      <section className="heading">
-        <h1>Welcome {user && user.name}</h1>
+      {/* Have it say Food Pantry Volunteer instead */}
+      <section className='heading'>
+        <h1>Welcome {user.fname}</h1>
         <p>Goals Dashboard</p>
       </section>
 
-      <GoalForm />
-
-      <section className="content">
-        {goals.length > 0 ? (
-          <div className="goals">
-            {goals.map((goal) => (
-              <GoalItem key={goal._id} goal={goal} />
-            ))}
-          </div>
-        ) : (
-          <h3>You have not set any goals</h3>
-        )}
+      <section>
+        {weekStart.toDateString()}
+        {/* TO DO -- add a tilde (~) and the end date here */}
       </section>
+
+      {/* send weekStart and weekEnd values to SlotForm as parameters */}
+      <SlotForm wStart = {weekStart} />
     </>
   )
 }
