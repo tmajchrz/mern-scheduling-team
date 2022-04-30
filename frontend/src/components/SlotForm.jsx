@@ -64,7 +64,94 @@ function SlotForm(props) {
               {slots.length > 0 ? (
                 <div className='slots'>
                     {slots.map((slot) => (
-                      <SlotItem key={slot._id} slot={slot} />
+                      (Math.floor(((new Date(Date.parse(slot.startAt)).getTime())
+                       - weekStart.getTime())/(1000*3600*24))==0) ?
+                      <SlotItem key={slot._id} slot={slot} /> :
+                      ""
+                    ))}
+                </div>
+              ) : (
+                <p></p>
+              )}
+            </div>
+            <div className='sub-grid'>
+              {slots.length > 0 ? (
+                <div className='slots'>
+                    {slots.map((slot) => (
+                      (Math.floor(((new Date(Date.parse(slot.startAt)).getTime())
+                       - weekStart.getTime())/(1000*3600*24))==1) ?
+                      <SlotItem key={slot._id} slot={slot} /> :
+                      ""
+                    ))}
+                </div>
+              ) : (
+                <p></p>
+              )}
+            </div>
+            <div className='sub-grid'>
+              {slots.length > 0 ? (
+                <div className='slots'>
+                    {slots.map((slot) => (
+                      (Math.floor(((new Date(Date.parse(slot.startAt)).getTime())
+                       - weekStart.getTime())/(1000*3600*24))==2) ?
+                      <SlotItem key={slot._id} slot={slot} /> :
+                      ""
+                    ))}
+                </div>
+              ) : (
+                <p></p>
+              )}
+            </div>
+            <div className='sub-grid'>
+              {slots.length > 0 ? (
+                <div className='slots'>
+                    {slots.map((slot) => (
+                      (Math.floor(((new Date(Date.parse(slot.startAt)).getTime())
+                       - weekStart.getTime())/(1000*3600*24))==3) ?
+                      <SlotItem key={slot._id} slot={slot} /> :
+                      ""
+                    ))}
+                </div>
+              ) : (
+                <p></p>
+              )}
+            </div>
+            <div className='sub-grid'>
+              {slots.length > 0 ? (
+                <div className='slots'>
+                    {slots.map((slot) => (
+                      (Math.floor(((new Date(Date.parse(slot.startAt)).getTime())
+                       - weekStart.getTime())/(1000*3600*24))==4) ?
+                      <SlotItem key={slot._id} slot={slot} /> :
+                      ""
+                    ))}
+                </div>
+              ) : (
+                <p></p>
+              )}
+            </div>
+            <div className='sub-grid'>
+              {slots.length > 0 ? (
+                <div className='slots'>
+                    {slots.map((slot) => (
+                      (Math.floor(((new Date(Date.parse(slot.startAt)).getTime())
+                       - weekStart.getTime())/(1000*3600*24))==5) ?
+                      <SlotItem key={slot._id} slot={slot} /> :
+                      ""
+                    ))}
+                </div>
+              ) : (
+                <p></p>
+              )}
+            </div>
+            <div className='sub-grid'>
+              {slots.length > 0 ? (
+                <div className='slots'>
+                    {slots.map((slot) => (
+                      (Math.floor(((new Date(Date.parse(slot.startAt)).getTime())
+                       - weekStart.getTime())/(1000*3600*24))==6) ?
+                      <SlotItem key={slot._id} slot={slot} /> :
+                      ""
                     ))}
                 </div>
               ) : (
